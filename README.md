@@ -54,6 +54,10 @@ A command-line password manager written in Python that allows to generate, store
 ## Usage
     python main.py 
 
+Before executing `main.py`, user must first set `fromaddr`, `toaddr` and `email_app_password`, corresponding respectively to sender's and receiver's address, and application password of Gmail. 
+
+The user can also modify `limit_failed_attempts` (=3 by default) and `time_window` (=10 seconds by default), corresponding respectively to the number of allowed failed login attempts and the time window under which those attempts are made before sending an email alert.
+
 Upon first execution of `main.py`, the code prompts the user to enter admin username and password, which will be stored and hashed in the `secret.txt` file. Alongside the creation of `secret.txt`, an encryption key will be generated and stored in the `key.key` file, and `password.txt` will be created to store encrypted passwords.
 
 The user is then prompted to choose between `Generate`, `View`, `Edit admin`, `Manual add`, `Quit` : 
@@ -64,12 +68,13 @@ The user is then prompted to choose between `Generate`, `View`, `Edit admin`, `M
 
 - `Edit admin` : Upon login using admin credentials, user can choose to change admin username and password.
 
-- `Manual add` : prompts the user to manually enter a password and its `purpose`.
+- `Manual add` : prompts the user to manually enter a password and its `purpose`. 
 
 - `Quit` : quits program.
 
-Note : If `purpose` already exists, user will be asked if they want to replace it. If so, login will be needed.
-Note : Once the `limit_failed_attempts` reached under a certain `time_window`, an email alert will be sent to the set email address in `constants.py`.
+**Note** : If `purpose` already exists, user will be asked if they want to replace it. If so, login will be needed.
+
+**Note** : Once the `limit_failed_attempts` reached under a certain `time_window`, an email alert will be sent to the set email address in `constants.py`.
 
 ## Recommandations
 
