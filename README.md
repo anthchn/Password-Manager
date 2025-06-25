@@ -56,7 +56,7 @@ A command-line password manager written in Python that allows to generate, store
 
 Before executing `main.py`, user must first set `fromaddr`, `toaddr` and `email_app_password`, corresponding respectively to sender's and receiver's address, and application password of Gmail. 
 
-The user can also modify `limit_failed_attempts` (=3 by default) and `time_window` (=10 seconds by default), corresponding respectively to the number of allowed failed login attempts and the time window under which those attempts are made before sending an email alert.
+The user can also modify `limit_failed_attempts` (=3 by default) and `time_window` (=30 seconds by default), corresponding respectively to the number of allowed failed login attempts and the time window under which those attempts are made before sending an email alert.
 
 Upon first execution of `main.py`, the code prompts the user to enter admin username and password, which will be stored and hashed in the `secret.txt` file. Alongside the creation of `secret.txt`, an encryption key will be generated and stored in the `key.key` file, and `password.txt` will be created to store encrypted passwords.
 
